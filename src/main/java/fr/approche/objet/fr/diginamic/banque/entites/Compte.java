@@ -4,6 +4,7 @@ public class Compte {
     int compteNumber;
     double compteSolde;
 
+
     public Compte(int compteNumber, double compteSolde) {
         this.compteNumber = compteNumber;
         this.compteSolde = compteSolde;
