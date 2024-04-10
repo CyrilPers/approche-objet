@@ -16,4 +16,16 @@ public class Compte {
     public void setCompteNumber(int compteNumber) {
         this.compteNumber = compteNumber;
     }
+
+    public double getCompteSolde() {
+        return compteSolde;
+    }
+
+    public void setCompteSolde(double compteSolde) {
+        this.compteSolde = compteSolde;
+    }
+
+    public String toString() {
+        return "Compte numéro: " + compteNumber + ", Solde: " + compteSolde;
+    }
 }
