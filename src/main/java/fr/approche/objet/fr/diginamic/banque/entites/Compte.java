@@ -1,8 +1,8 @@
 package fr.approche.objet.fr.diginamic.banque.entites;
 
 public class Compte {
-    int compteNumber;
-    double compteSolde;
+    protected int compteNumber;
+    protected double compteSolde;
 
 
     public Compte(int compteNumber, double compteSolde) {

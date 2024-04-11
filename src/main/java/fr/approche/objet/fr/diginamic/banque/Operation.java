@@ -3,8 +3,8 @@ package fr.approche.objet.fr.diginamic.banque;
 import java.util.Date;
 
 public abstract class Operation {
-    Date dateOperation;
-    Double montantOperation;
+    protected Date dateOperation;
+    protected Double montantOperation;
 
     public Operation(Date date, Double montant) {
         this.dateOperation = date;
