@@ -14,6 +14,6 @@ public class TestOperations {
             else
                 montantOperation -= myOperation.getMontantOperation();
         }
-        System.out.println(montantOperation);
+        System.out.println("Montant final des opérations " + montantOperation);
     }
 }
