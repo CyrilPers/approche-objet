@@ -6,6 +6,7 @@ public abstract class Operation {
     protected Date dateOperation;
     protected Double montantOperation;
 
+
     public Operation(Date date, Double montant) {
         this.dateOperation = date;
         this.montantOperation = montant;
