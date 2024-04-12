@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class LectureFichier {
-    public static void main(String[] args) throws IOException {
+    public static  void main(String[] args) throws IOException {
         ArrayList<Ville> villes = new ArrayList<>();
         ArrayList<String> bigVilles = new ArrayList<>();
         Path pathOrigine = Paths.get("C:/Users/777/Downloads/recensement.csv");
@@ -27,7 +27,6 @@ public class LectureFichier {
             String enteteLine = entetes[6] + ";" + entetes[2] + ";" + entetes[1] + ";" + entetes[9];
             bigVilles.add(enteteLine);
         }
-
         for (Ville ville: villes) {
             if (ville.getPopulationTotale() > 25000) {
                 String line = ville.getNom() + ";" + ville.getCodeDepartement() + ";" + ville.getNomRegion() + ";" + ville.getPopulationTotale();
@@ -35,5 +34,6 @@ public class LectureFichier {
             }
         }
         Files.write(pathDestination, bigVilles, StandardCharsets.UTF_8);
+
     }
 }

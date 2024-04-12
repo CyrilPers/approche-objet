@@ -1,9 +1,9 @@
 package fr.approche.objet.fichier;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-public class Ville {
+/**
+ * Represents a city.
+ */
+public class Ville implements Comparable<Ville> {
     private String nom;
     private String codeDepartement;
     private String nomRegion;
@@ -23,6 +23,7 @@ public class Ville {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
 
     public String getCodeDepartement() {
         return codeDepartement;
@@ -46,5 +47,15 @@ public class Ville {
 
     public void setPopulationTotale(int populationTotale) {
         this.populationTotale = populationTotale;
+    }
+
+    @Override
+    public int compareTo(Ville autreVille) {
+        if (this.populationTotale > autreVille.getPopulationTotale()) {
+            return -1;
+        } else if (this.populationTotale < autreVille.getPopulationTotale()) {
+            return 1;
+        } else
+            return 0;
     }
 }
