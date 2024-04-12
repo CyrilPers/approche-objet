@@ -21,7 +21,7 @@ public class ComptagePaysParContinent {
 
         HashMap<String, Integer> mapContinents = new HashMap<>();
         listePays.forEach(pays -> {
-            int habitants = mapContinents.getOrDefault(pays.getContinent(), 0).intValue();
+            int habitants = mapContinents.getOrDefault(pays.getContinent(), 0);
             mapContinents.put(pays.getContinent(), habitants + pays.getNbHabitants());
         });
 
