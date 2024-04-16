@@ -1,7 +1,4 @@
 package fr.approche.objet.tri;
-
-import fr.approche.objet.listes.Ville;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
