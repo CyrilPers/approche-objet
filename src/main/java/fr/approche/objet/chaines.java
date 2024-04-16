@@ -9,6 +9,8 @@ public class chaines {
         for (int i = 0; i < 100000; i++) {
             builder.append("i");
         }
+
+        builder.toString();
         long fin = System.currentTimeMillis();
         System.out.println("Temps écoulé en millisecondes :" + (fin - debut));
 
