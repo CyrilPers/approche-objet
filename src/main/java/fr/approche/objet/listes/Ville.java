@@ -1,8 +1,8 @@
 package fr.approche.objet.listes;
 
 public class Ville {
-   private String nom;
-   private int nbHabitants;
+    private String nom;
+    private int nbHabitants;
 
     public Ville(String nom, int nbHabitants) {
         this.nom = nom;
@@ -25,5 +25,11 @@ public class Ville {
         this.nbHabitants = nbHabitants;
     }
 
-
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Ville)) {
+            return false;
+        }
+        Ville ville = (Ville) obj;
+        return (nom.equals(ville.getNom()) && nbHabitants == ville.getNbHabitants());
+    }
 }
