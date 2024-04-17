@@ -14,7 +14,7 @@ public enum Saison {
         for (Saison saison : values()) {
             if (saison.getLibelle().equals(libelle))return saison;
         }
-        throw new IllegalArgumentException();
+        return null;
     }
 
 
