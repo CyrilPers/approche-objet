@@ -10,7 +10,10 @@ public class TestEnumeration {
             System.out.println(saison.getLibelle());
         }
 
-        System.out.println(Saison.ETE.getLibelle());
+        String nom = "ETE";
+        Saison ete = Saison.valueOf(nom);
+        System.out.println(ete.getLibelle());
+
         String libelle = "Hiver";
         Saison saisonHiver = Saison.getEnumByLibelle(libelle);
         System.out.println(saisonHiver.getLibelle());
