@@ -1,12 +1,14 @@
 package fr.approche.objet.sets;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Optional;
 
 public class Manipulation {
     public static void main(String[] args) {
-        HashSet<Pays> pays = new HashSet<>();
-        Collections.addAll(pays,
+        HashSet<Pays> paysList = new HashSet<>();
+        Collections.addAll(paysList,
                 new Pays("USA", 333, 76333),
                 new Pays("France", 68, 36800),
                 new Pays("Allemagne", 83, 46000),
@@ -17,11 +19,27 @@ public class Manipulation {
                 new Pays("Russie", 146, 11000),
                 new Pays("Inde", 1300, 2000));
 
-        pays.stream().map(pays -> pays.getPIBHabitant()).max().ifPresent(System.out::println);
-        pays.stream().map(pays -> pays.getNbHabitants()).max().ifPresent(System.out::println);
-        Pays minPIBTotalPays = pays.stream().map(pays -> pays.getNbHabitants() * pays.getPIBHabitant()).min().stream().orElse(null);
+        Optional<Pays> maxPIBHabitantPays = paysList.stream()
+                .max(Comparator.comparingDouble(pays -> pays.getPIBHabitant()));
+        if (maxPIBHabitantPays.isPresent()) {
+            System.out.println(maxPIBHabitantPays.get().getNom());
+        }
 
+        Optional<Pays> maxPIBTotalPays = paysList.stream()
+                .max(Comparator.comparingDouble(pays -> pays.getPIBHabitant()));
+        if (maxPIBTotalPays.isPresent()) {
+            System.out.println(maxPIBTotalPays.get().getNom());
+        }
 
+        Optional<Pays> minPIBTotalPays = paysList.stream()
+                .min(Comparator.comparingDouble(pays -> (pays.getNbHabitants() * pays.getPIBHabitant())));
+
+        if (minPIBTotalPays.isPresent()) {
+            Pays minPIBToEdit = minPIBTotalPays.get();
+            paysList.remove(minPIBToEdit);
+            minPIBToEdit.setNom(minPIBToEdit.getNom().toUpperCase());
+        }
+        paysList.forEach(pays-> System.out.println(pays.getNom() + " " + pays.getNbHabitants()+ " " + (pays.getNbHabitants() * pays.getPIBHabitant())));
 
     }
 }
